@@ -24,7 +24,8 @@ Provide a step-by-step description of how to get the development environment set
 Clone the repository:
 ```shell
 git clone https://github.com/Attoumassa/book_rating_prediction_model.git
-cd book_rating_pred_u_ction_model
+cd book_rating_prediction_model
+git checkout main
 ```
 
 Create and activate python virtual environment with conda:
@@ -36,6 +37,12 @@ conda activate book_rating_prediction_model_env_aamv
 
 ```shell
 pip install -r requirements.txt
+```
+
+Open a jupyter notebook instance to then open final_notebook.ipynb:
+
+```shell
+jupyter notebook
 ```
 
 ## 3. How to Use the Project
