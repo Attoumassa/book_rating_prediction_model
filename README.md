@@ -60,11 +60,21 @@ Installing package dependencies
 pip install -r requirements.txt
 ```
 
-Open the notebook :
+**Open the notebook:**
 
 ```shell
 jupyter notebook src/final_notebook.ipynb
 ```
+
+**Open the report:**
+
+```shell
+cd report
+python report/report.py
+streamlit run report/report.py
+```
+
+
 
 ## 3. How to Use the Project
 

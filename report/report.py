@@ -1,4 +1,4 @@
-import streamlit as st 
+import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -20,7 +20,7 @@ for member in Team_members:
     st.sidebar.markdown(member)
 
 raw_df = pd.read_csv(
-    filepath_or_buffer="data/books.csv",
+    filepath_or_buffer="report/data/books.csv",
     on_bad_lines="warn",
     sep=",",
     skipinitialspace=True)
