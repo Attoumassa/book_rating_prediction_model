@@ -28,8 +28,7 @@ Optionally, for easier virtual environment creation:
 
 Clone the repository:
 ```shell
-git clone
-- https://github.com/Attoumassa/book_rating_prediction_model.git
+git clone https://github.com/Attoumassa/book_rating_prediction_model.git
 cd book_rating_prediction_model
 git checkout main
 ```
