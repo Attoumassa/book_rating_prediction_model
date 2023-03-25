@@ -16,37 +16,65 @@ The quality of a README description often differentiates a good project from a b
 
 ## 2. How to Install and Run the Project
 
-If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
 
-Provide a step-by-step description of how to get the development environment set and running.
+The project requires the following to be installed. 
+- [python3.9](https://www.python.org/downloads/)
+- [git](https://git-scm.com/)
 
+Optionally, for easier virtual environment creation:
+- [anaconda](https://www.anaconda.com/)
+
+#### Instructions
 
 Clone the repository:
 ```shell
-git clone https://github.com/Attoumassa/book_rating_prediction_model.git
+git clone
+- https://github.com/Attoumassa/book_rating_prediction_model.git
 cd book_rating_prediction_model
 git checkout main
 ```
 
-Create and activate python virtual environment with conda:
+Create and activate python virtual environment:
 
+- Using conda (preferred method)
 ```shell
 conda create -n "book_rating_prediction_model_env_aamv" python=3.9
 conda activate book_rating_prediction_model_env_aamv
 ```
 
+- Using venv
+```shell
+# Create the virtual environment
+python3.9 -m venv book_rating_prediction_model_env_aamv
+
+# Activate the virtual environment
+## UNIX-like systems
+source book_rating_prediction_model_env_aamv/bin/activate
+
+## Windows with powershell
+.\book_rating_prediction_model_env_aamv\Scripts\Activate.ps1
+```
+
+Installing package dependencies
 ```shell
 pip install -r requirements.txt
 ```
 
-Open a jupyter notebook instance to then open final_notebook.ipynb:
+Open the notebook :
 
 ```shell
-jupyter notebook
+jupyter notebook src/final_notebook.ipynb
 ```
 
 ## 3. How to Use the Project
 
+The project consists of a jupyter notebook. simply run each cell and read the comments. 
+
+The project is structured as follow:
+- Introduction
+    - jdfkldsjf
+    - lfdfjng
+- fdskjfsd
 Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
 
 You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
@@ -55,8 +83,8 @@ Also if your project will require authentication like passwords or usernames, th
 
 ## 4. Credits
 
-If you worked on the project as a team or an organization, list your collaborators/team members. You should also include links to their GitHub profiles and social media too.
-
-Also, if you followed tutorials or referenced a certain material that might help the user to build that particular project, include links to those here as well.
-
-This is just a way to show your appreciation and also to help others get a first hand copy of the project.
+This project has been made by:
+- [Attoumassa Samaké](https://github.com/Attoumassa)
+- [Marguerite Nken](https://github.com/marguerite-nken)
+- [Vixra Keo](https://github.com/Vixk2021)
+- [Antoine Bedouch](https://github.com/Antoine-bdc)
