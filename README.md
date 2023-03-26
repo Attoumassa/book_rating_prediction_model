@@ -1,37 +1,114 @@
-# What to Include in your README
-## 1. Project's Title
+# Book Rating regression project 
 
-This is the name of the project. It describes the whole project in one sentence, and helps people understand what the main goal and aim of the project is.
-## 2. Project Description
+## 1. Project Description
 
-This is an important component of your project that many new developers often overlook.
+The objective of this Machine Learning project is to predict a book’s rating based on a dataset coming from the Goodreads website, a real readers community.
 
-Your description is an extremely important aspect of your project. A well-crafted description allows you to show off your work to other developers as well as potential employers.
+Predicting the rating of a book can be approached as a regression problem because it involves predicting a continuous numerical value: in this case the average rating. For that reason, we can use a Supervised learning method, allowing us to predict a continuous output variable (the book rating) based on one or more input variables (such as titles, authors, number of page, ratings count, publishers and many more).
 
-The quality of a README description often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase:
+After processing the data and engineering the features, we have trained a handful of different regression models. Finally, we have evaluated and compared these models.
 
-- What your application does,
-- Why you used the technologies you used,
-- Some of the challenges you faced and features - you hope to implement in the future.
+## 2. How to Install and Run the Project
 
-## 4. How to Install and Run the Project
 
-If you are working on a project that a user needs to install or run locally in a machine like a "POS", you should include the steps required to install your project and also the required dependencies if any.
+The project requires the following to be installed. 
+- [python3.9](https://www.python.org/downloads/)
+- [git](https://git-scm.com/)
 
-Provide a step-by-step description of how to get the development environment set and running.
+Optionally, for easier virtual environment creation:
+- [anaconda](https://www.anaconda.com/)
 
-## 5. How to Use the Project
+#### Instructions
 
-Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
+Clone the repository:
+```shell
+git clone https://github.com/Attoumassa/book_rating_prediction_model.git
+cd book_rating_prediction_model
+git checkout main
+```
 
-You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
+Create and activate python virtual environment:
 
-Also if your project will require authentication like passwords or usernames, this is a good section to include the credentials.
+- Using conda (preferred method)
+```shell
+conda create -n "book_rating_prediction_model_env_aamv" python=3.9
+conda activate book_rating_prediction_model_env_aamv
+```
 
-## 6. Include Credits
+- Using venv
+```shell
+# Create the virtual environment
+python3.9 -m venv book_rating_prediction_model_env_aamv
 
-If you worked on the project as a team or an organization, list your collaborators/team members. You should also include links to their GitHub profiles and social media too.
+# Activate the virtual environment
+## UNIX-like systems
+source book_rating_prediction_model_env_aamv/bin/activate
 
-Also, if you followed tutorials or referenced a certain material that might help the user to build that particular project, include links to those here as well.
+## Windows with powershell
+.\book_rating_prediction_model_env_aamv\Scripts\Activate.ps1
+```
 
-This is just a way to show your appreciation and also to help others get a first hand copy of the project.
+Installing package dependencies
+```shell
+pip install -r requirements.txt
+```
+
+**Open the notebook:**
+
+```shell
+jupyter notebook src/final_notebook.ipynb
+```
+
+**Open the report:**
+
+```shell
+python report/report.py
+streamlit run report/report.py
+```
+
+Note: If the interactive version of the report doesn't work on your computer for whichever reason, a static export has been made and can be found in the following pdf file: `report/report.pdf`
+
+## 3. How to Use the Project
+
+The project consists of a jupyter notebook. Simply run each cell and read the comments. 
+
+The project is structured as follow:
+
+- Introduction
+
+- Data exploration
+    - Loading the data
+    - Preliminary analysis
+    - Removing unused data
+
+- Feature Engineering
+    - Publication date
+    - Language
+    - Title, publisher and author data
+    - Outliers
+    - Conclusion
+- Data modeling
+    - Splitting the data
+    - How to evaluate a model
+    - Linear Regression
+    - Random Forest
+    - Decision Tree Regressor
+    - Support Vector Regression (SVR) with Radial Basis Function (RBF) kernel
+    - Gradient Boosting
+    - Adaboost
+    - Stacking
+
+- Comparing the models
+    - Modeling score comparison
+    - Comparing model with all features vs less features
+    - Comparing with and without outliers
+
+- Conclusion
+
+## 4. Credits
+
+This project has been made by:
+- [Attoumassa Samaké](https://github.com/Attoumassa)
+- [Marguerite Nken](https://github.com/marguerite-nken)
+- [Vixra Keo](https://github.com/Vixk2021)
+- [Antoine Bedouch](https://github.com/Antoine-bdc)
