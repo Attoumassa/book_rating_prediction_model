@@ -80,10 +80,35 @@ streamlit run report/report.py
 The project consists of a jupyter notebook. simply run each cell and read the comments. 
 
 The project is structured as follow:
-- Introduction
+- 1. Introduction
     - jdfkldsjf
     - lfdfjng
-- fdskjfsd
+- 2. Data exploration
+    - Loading the data
+    - Preliminary analysis
+    - Removing unused data
+- 3. Feature Engineering
+    - Publication date
+    - Language
+    - Title, publisher and author data
+    - Outliers
+    - Conclusion
+- 4. Data modeling
+    - Splitting the data
+    - How to evaluate a model
+    - Linear Regression
+    - Random Forest
+    - Decision Tree Regressor
+    - Support Vector Regression (SVR) with Radial Basis Function (RBF) kernel
+    - Gradient Boosting
+    - Adaboost
+    - Stacking
+- 5. Comparing the models
+    - Modeling score comparison
+    - Comparing model with all features vs less features
+    - Comparing with and without outliers
+- 6. Conclusion
+
 Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
 
 You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
