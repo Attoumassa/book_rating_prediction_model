@@ -2,15 +2,11 @@
 
 ## 1. Project Description
 
-This is an important component of your project that many new developers often overlook.
+The objective of this Machine Learning project is to predict a book’s rating based on a dataset coming from the Goodreads website, a real readers community.
 
-Your description is an extremely important aspect of your project. A well-crafted description allows you to show off your work to other developers as well as potential employers.
+Predicting the rating of a book can be approached as a regression problem because it involves predicting a continuous numerical value: in this case the average rating. For that reason, we can use a Supervised learning method, allowing us to predict a continuous output variable (the book rating) based on one or more input variables (such as titles, authors, number of page, ratings count, publishers and many more).
 
-The quality of a README description often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase:
-
-- What your application does,
-- Why you used the technologies you used,
-- Some of the challenges you faced and features - you hope to implement in the future.
+After processing the data and engineering the features, we have trained a handful of different regression models. Finally, we have evaluated and compared these models.
 
 ## 2. How to Install and Run the Project
 
@@ -66,16 +62,13 @@ jupyter notebook src/final_notebook.ipynb
 **Open the report:**
 
 ```shell
-cd report
 python report/report.py
 streamlit run report/report.py
 ```
 
-
-
 ## 3. How to Use the Project
 
-The project consists of a jupyter notebook. simply run each cell and read the comments. 
+The project consists of a jupyter notebook. Simply run each cell and read the comments. 
 
 The project is structured as follow:
 
@@ -109,12 +102,6 @@ The project is structured as follow:
     - Comparing with and without outliers
 
 - Conclusion
-
-Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
-
-You can also make use of visual aids by including materials like screenshots to show examples of the running project and also the structure and design principles used in your project.
-
-Also if your project will require authentication like passwords or usernames, this is a good section to include the credentials.
 
 ## 4. Credits
 

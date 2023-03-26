@@ -270,6 +270,12 @@ elif page == pages[3]:
     st.write("- Adaboost")
     st.write("- StackingCV")
 
+    st.write("Here are the summarised results of each model and for each metric:")
+
+    all_evaluations = pd.read_csv("report/data/evaluations.csv")
+
+    all_evaluations
+
     st.write("After carrying out the modeling made the following observations: ")
     st.write("First, we note the correlation between the RMSE and the R² score. In general, the better the R² (lower), the better (higher) the RMSE. This suggests that at the very least, these measurements are consistent with one another. Also, we observe that while the R² score displays significantly more diverse values, the RMSE scores are often comparable to one another (0.3 < RMSE < 0.4).")
     st.write("Secondly, we notice that the Gradient Boosting is the model that performs the best in terms of R² score and RMSE. However, the Adaboost Decision Tree model performs the best if minimizing the maximum error is preferred. In other words, compared to models like Gradient Boosting and Random Forest that often perform better, its worst errors are less incorrect.")
