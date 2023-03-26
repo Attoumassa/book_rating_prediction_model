@@ -5,15 +5,24 @@ import seaborn as sns
 
 # STREAMLIT
 
-#The sidebar 
+# The sidebar
 st.sidebar.title("Books rating project")
 
-pages = ["Introduction","Data Exploration","Features Engineering","Data Modeling","Conclusion"]
+pages = [
+    "Introduction",
+    "Data Exploration",
+    "Features Engineering",
+    "Data Modeling",
+    "Conclusion"]
 page = st.sidebar.radio("go through", pages)
 
-Team_members =["Vixra KEO","Margueritte Babeth NKEN","Antoine BEDOUCH","Attoumassa SAMAKE"]
+Team_members = [
+    "Vixra KEO",
+    "Margueritte Babeth NKEN",
+    "Antoine BEDOUCH",
+    "Attoumassa SAMAKE"]
 
-#Team members 
+# Team members
 st.sidebar.markdown("---")
 st.sidebar.title("Team members")
 for member in Team_members:
@@ -26,27 +35,27 @@ raw_df = pd.read_csv(
     skipinitialspace=True)
 
 
-#Page 0 : The project descrition 
-if page==pages[0]: 
-     st.title("Introduction")
-     #st.image('gd2.jpeg')
-     st.write("	Predictive analytics is a very broad set of practices aimed at analysing the data available to a company and predicting from that data. It uses predictive models, supported by algorithms that learn from the data. Its areas of application are as diverse as the data available: and in this case, we will focus on literature.")
-     st.write("In this study, we aim to define a predictive model for book reviews. For this purpose, we will use different types of models, and depending on the results, choose the most optimal one.")
-     st.write("This work will be divided into three parts:")
-     st.write("- *Data Exploration*") 
-     st.write("- *Features Engineering*")
-     st.write("- *Data Modeling*") 
+# Page 0 : The project descrition
+if page==pages[0]:
+    st.title("Introduction")
+    # st.image('gd2.jpeg')
+    st.write("	Predictive analytics is a very broad set of practices aimed at analysing the data available to a company and predicting from that data. It uses predictive models, supported by algorithms that learn from the data. Its areas of application are as diverse as the data available: and in this case, we will focus on literature.")
+    st.write("In this study, we aim to define a predictive model for book reviews. For this purpose, we will use different types of models, and depending on the results, choose the most optimal one.")
+    st.write("This work will be divided into three parts:")
+    st.write("- *Data Exploration*")
+    st.write("- *Features Engineering*")
+    st.write("- *Data Modeling*")
 
 
 
-#Page 1: Analysis & cleanning 
+# Page 1: Analysis & cleanning
 elif page==pages[1]:
     st.header("Data exploration")
     st.write("During the exploratory analysis, we first conducted a thorough investigation of our database. This involved observing the format of the dataset, seeing if there were any missing or incorrectly filled in data and choosing the appropriate processing method.")
     st.write("Then we proceded to the preliminary analyses, i.e. to assess the balance of the data, to determine the useful variables according to the information contained in these variables, and to eliminate those that are not very useful for our analysis.")
+
     
-     
-    #st.write(raw_df.head())
+    # st.write(raw_df.head())
     if st.checkbox("**Preview Dataset **"):
         st.dataframe(raw_df)
 
@@ -55,14 +64,14 @@ elif page==pages[1]:
 
     st.write("**Quantitative variables :**")
     st.write("- *Average_rating* : The average rating of the book received in total")
-    st.write("- *num_pages*: The number of pages the book contains") 
+    st.write("- *num_pages*: The number of pages the book contains")
     st.write("- *ratings_count*: The total number of ratings the book received")
     st.write("- *text_reviews_count*: The total number of written text reviews the book received")
 
-    st.write("**Qualitative variables:**")   
+    st.write("**Qualitative variables:**")  
     st.write("- *title*: The name under which the book was published.")
-    st.write("- *authors*: The names of the authors of the book. Multiple authors are delimited by “/”.")   
-    st.write("- *language_code*: Indicates the primary language of the book. For instance, “eng” is standard for English.") 
+    st.write("- *authors*: The names of the authors of the book. Multiple authors are delimited by “/”.")  
+    st.write("- *language_code*: Indicates the primary language of the book. For instance, “eng” is standard for English.")
     st.write("- *publication_date*: The date the book was published.")
     st.write("- *publisher*: The name of the book publisher.")
 
@@ -70,70 +79,68 @@ elif page==pages[1]:
 
 
 
-#NETTOYAGE DU JEU DE DONNÉES 
+# NETTOYAGE DU JEU DE DONNÉES
     st.subheader("Clean up the dataset")
-    #st.write("**Gestion des NaNs :**")  
+    # st.write("**Gestion des NaNs :**")
     st.write("Please note that there is no NA values.")
-    #st.write("- Is the data balanced?")
-   # st.write(" - Is there any outliers in our dataset ?")
-    #st.write("- Which features are useful and which aren't?")
+    # st.write("- Is the data balanced?")
+    # st.write(" - Is there any outliers in our dataset ?")
+    # st.write("- Which features are useful and which aren't?")
 
     st.write("After ploting the distributions of the main numerical features:")
-    st.write("- *number of pages*") 
+    st.write("- *number of pages*")
     st.write("- *number of ratings*")
-    st.write("- *number of reviews*") 
-    st.write("- *average rating*") 
+    st.write("- *number of reviews*")
+    st.write("- *average rating*")
 
     if st.checkbox("**Show plots**"):
-   
+
         st.markdown("      ")
-        fig_num_pages = plt.figure(figsize=[12,5])
+        fig_num_pages = plt.figure(figsize=[12, 5])
         df = raw_df
         plt.hist(df["num_pages"], bins=30)
         plt.yscale("log")
         plt.show()
         st.pyplot(fig_num_pages)
         st.caption("The distribution of number of pages ")
-        
 
         st.markdown("      ")
-        fig_num_rating = plt.figure(figsize=[12,5])
+        fig_num_rating = plt.figure(figsize=[12, 5])
         plt.hist(df["ratings_count"], bins=50)
         plt.yscale("log")
         plt.show()
         st.pyplot(fig_num_rating)
         st.caption("The distribution of number of ratings")
-        
+
         st.markdown("      ")
-        fig_text = plt.figure(figsize=[12,5])
+        fig_text = plt.figure(figsize=[12, 5])
         plt.hist(df["text_reviews_count"], bins=50)
         plt.yscale("log")
         plt.show()
         st.pyplot(fig_text)
         st.caption("The distribution of number of reviews")
-        
 
         st.markdown("      ")
-        fig_ave = plt.figure(figsize=[12,5])
+        fig_ave = plt.figure(figsize=[12, 5])
         plt.hist(df["average_rating"], bins=50)
         plt.show()
         st.pyplot(fig_ave)
         st.caption("The distribution of average rating")
-       
-    st.write("We observe that most books have less than 1000 pages. Under 1000 pages the distribution is overall balanced.") 
+
+    st.write("We observe that most books have less than 1000 pages. Under 1000 pages the distribution is overall balanced.")
     st.write("The distribution of number of ratings and reviews are skewed towards 0. This means that generally speaking, most books have fewer numbers of reviews and ratings while a few books have a lot. Such distribution resembles a [power law distribution](https://en.wikipedia.org/wiki/Power_law).")
     st.write("We also notice immediately that the target feature `average_rating` is skewed towards an average of 4. It resembles a normal distribution centered around 4. This data is inherently imbalanced (almost all ratings between 3 and 5, almost no ratings between 0 and 3).")
     st.write("We will have to take this into consideration when creating the training and testing sets: these sets should both include books with a wide range of average ratings.")
 
     df = raw_df
     corr_matrix = df.corr()
-    fig_mat=plt.figure(figsize=(8, 7))
+    fig_mat = plt.figure(figsize=(8, 7))
     sns.heatmap(corr_matrix, annot=True)
     plt.show()
     st.pyplot(fig_mat)
 
 
-elif page==pages[2]:
+elif page == pages[2]:
     df = raw_df
     df = df.drop(["bookID", "isbn", "isbn13"], axis=1)
     st.header("Features Engineering")
@@ -142,8 +149,8 @@ elif page==pages[2]:
     st.write("**1- Defining the Model Variables**")
     st.write("This was achieved through the creation of a function, the *get_real_age* function, that converts a date to number of seconds since a reference time. The function then normalises this number of seconds between 0 and 1 values, where 0 corresponds to the oldest book in our dataset and 1 the most recently published book. This allowed us carry out an age distribution evaluation, and it was noticed that the distribution was imbalanced.")
     st.write("We later proceeded to studying the relationship existing between the selected variables of our dataset and our targeted variable. This was done with the use of a correlation matrice. Of all the chosen variables, we could see that only the number of pages had a better correlation to our targeted variable, average rating.")
-    
-    #begin code
+
+    # begin code
 
     from datetime import datetime, MINYEAR, timedelta
     from time import strptime
@@ -155,8 +162,8 @@ elif page==pages[2]:
             new_time_format = datetime.strptime(date, "%m/%d/%Y")
             return new_time_format
         except ValueError:
-            # Some dates seem to be erronous (days that do not exist for given months)
-            # Correcting these days manually
+            #  Some dates seem to be erronous (days that do not exist for given months)
+            #  Correcting these days manually
             newdate = date.split("/")
             if newdate[1] == "31":
                 newdate[1] = "30"
@@ -185,10 +192,10 @@ elif page==pages[2]:
         return datetime.fromtimestamp(datetime_s)
 
     df["normalised_age"] = df["publication_date"].apply(normalise_age)
-        #end code 
+        # end code
 
     corr_matrix = df.corr()
-    fig_mat=plt.figure(figsize=(8, 7))
+    fig_mat = plt.figure(figsize=(8, 7))
     sns.heatmap(corr_matrix, annot=True)
     plt.show()
     st.pyplot(fig_mat)
@@ -199,49 +206,45 @@ elif page==pages[2]:
     st.write("Having an idea of the main variables of our model, it is, however, still necessary to evaluate other variables that could bring more information to our model. Thus we proceeded to analysing the different languages in which were written the books, the book titles, publishers and authors.")
     st.write("By so doing, it could be observed that most books were written in English, and only *5.24%* of all the books were written in foreign languages; there is a total of 2290 authors, 2290 publishers and 10348 titles. This information would need to be transformed into numerical values if we wanted to use it as features. Thousands of names cannot be converted into quantifiable measures in a realistic manner. Thus, we did not find it interesting to use these variables.")
 
-    
+
     st.write("**3- Handling Outliers**")
     st.write("Outliers are values that are unusual in your dataset and might affect statistical analysis by challenging their presumptions. To avoid this, it is important to handle them prior to any analysis.")
     st.write("The first step was detecting them using a boxplot. Secondly, we went on to filter our outliers by setting up scale ( > 2e3 for the number of pages ), after which we observe the number outliers we have above that scale and delete them. We repeated the same procedure for the ratings count, the text reviews count and the normalised age, of course by setting up rules based on what was initially observed from the boxplot.")
 
     st.write("At the end we kept 96.27% of data.")
-    
 
-	
-
-	
 
 elif page==pages[3]:
     df = raw_df
     st.header("Data Modeling")
     st.write("Based on the feature engineering, we decided to keep the following predictor variables: ")
-    st.write("- *num_pages*") 
+    st.write("- *num_pages*")
     st.write("- *ratings_count*")
-    st.write("- *text_reviews_count*") 
-    st.write("- *normalized_age*") 
-    st.write("- *language*") 
+    st.write("- *text_reviews_count*")
+    st.write("- *normalized_age*")
+    st.write("- *language*")
 
     st.write("The variable to be predicted is *average_rating*.")
 
     st.write("**1. Data Splitting**")
     st.write("Prior to the modeling, we split our data into two subsets; a 20% subset for test and the remaining 80% for training. We then went on to compare the two subsets through a histogram, and we could observe a resemblance between both subsets and the original distribution. ")
 
-    #{Insert the training data and test data histogram}
+    # {Insert the training data and test data histogram}
 
-    #begin code 
+    # begin code
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import mean_absolute_error, max_error, mean_squared_error, r2_score
     import matplotlib.pyplot as plt
 
     df_train, df_test =  train_test_split(df, test_size = 0.2, random_state=42)
-    fig_test=plt.figure(figsize=(8, 7))
+    fig_test = plt.figure(figsize=(8, 7))
     plt.hist(df_train["average_rating"], bins=50, label="training data", alpha=0.5)
     plt.hist(df_test["average_rating"], bins=50, label="testing data", alpha=0.5)
     plt.legend()
     plt.show()
     st.pyplot(fig_test)
-    
-    #end code 
+
+    # end code
 
     st.write("2. **Model Evaluation**")
     st.write("It is helpful to consider which method to use in the evaluation of our models before we train the model. The ones we used are the Root-Mean-Square Error (RMSE) and the coefficient of determination (R-square or R²), both being the most popular metrics for regression models.")
@@ -250,7 +253,7 @@ elif page==pages[3]:
     st.write("- Compares the forecast of the 20 first books in our test dataframe with the actual values in a bar plot.")
     st.write("- Plots a scatterplot of the projected ratings as a function of the true ratings.")
     st.write("- Computes, prints, and returns the following metrics: Max error, RMSE and R² score")
-    
+
     st.write("3. **Modeling**")
     st.write("We carried out 7 different models	, in order to compare them and evaluate which of the 7 is the most optimal, the 7 models being:")
     st.write("- Linear regression")
@@ -260,13 +263,13 @@ elif page==pages[3]:
     st.write("- Gradient Boosting")
     st.write("- Adaboost")
     st.write("- StackingCV")
-    
+
     st.write("After carrying out the modeling made the following observations: ")
     st.write("First, we note the correlation between the RMSE and the R² score. In general, the better the R² (lower), the better (higher) the RMSE. This suggests that at the very least, these measurements are consistent with one another. Also, we observe that while the R² score displays significantly more diverse values, the RMSE scores are often comparable to one another.")
     st.write("Secondly, we notice that the Gradient Boosting is the model that performs the best in terms of R² score and RMSE. However, the Adaboost Decision Tree model performs the best if minimizing the maximum error is preferred. In other words, compared to models like Gradient Boosting and Random Forest that often perform better, its worst errors are less incorrect.")
 
 
-elif page==pages[4]:
+elif page == pages[4]:
     st.header("Conclusion")
     st.write("This project consisted of defining a model for predicting the reviews of a set of books. For this we used the database (name). ")
 
