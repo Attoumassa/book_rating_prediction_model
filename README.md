@@ -53,13 +53,18 @@ Installing package dependencies
 pip install -r requirements.txt
 ```
 
-**Open the notebook:**
+
+## 3. How to Use the Project
+
+The project consists of a jupyter notebook. Simply run each cell and read the comments. 
+
+**How to open the notebook:**
 
 ```shell
 jupyter notebook src/final_notebook.ipynb
 ```
 
-**Open the report:**
+**How to open the interactive report:**
 
 ```shell
 python report/report.py
@@ -68,9 +73,6 @@ streamlit run report/report.py
 
 Note: If the interactive version of the report doesn't work on your computer for whichever reason, a static export has been made and can be found in the following pdf file: `report/report.pdf`
 
-## 3. How to Use the Project
-
-The project consists of a jupyter notebook. Simply run each cell and read the comments. 
 
 The project is structured as follow:
 
