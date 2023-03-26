@@ -80,20 +80,21 @@ streamlit run report/report.py
 The project consists of a jupyter notebook. simply run each cell and read the comments. 
 
 The project is structured as follow:
-- 1. Introduction
-    - jdfkldsjf
-    - lfdfjng
-- 2. Data exploration
+
+- Introduction
+
+- Data exploration
     - Loading the data
     - Preliminary analysis
     - Removing unused data
-- 3. Feature Engineering
+
+- Feature Engineering
     - Publication date
     - Language
     - Title, publisher and author data
     - Outliers
     - Conclusion
-- 4. Data modeling
+- Data modeling
     - Splitting the data
     - How to evaluate a model
     - Linear Regression
@@ -103,11 +104,13 @@ The project is structured as follow:
     - Gradient Boosting
     - Adaboost
     - Stacking
-- 5. Comparing the models
+
+- Comparing the models
     - Modeling score comparison
     - Comparing model with all features vs less features
     - Comparing with and without outliers
-- 6. Conclusion
+
+- Conclusion
 
 Provide instructions and examples so users/contributors can use the project. This will make it easy for them in case they encounter a problem – they will always have a place to reference what is expected.
 
