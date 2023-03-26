@@ -66,6 +66,8 @@ python report/report.py
 streamlit run report/report.py
 ```
 
+Note: If the interactive version of the report doesn't work on your computer for whichever reason, a static export has been made and can be found in the following pdf file: `report/report.pdf`
+
 ## 3. How to Use the Project
 
 The project consists of a jupyter notebook. Simply run each cell and read the comments. 
