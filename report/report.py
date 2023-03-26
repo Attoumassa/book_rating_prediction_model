@@ -14,7 +14,7 @@ pages = [
     "Feature Engineering",
     "Data Modeling",
     "Conclusion"]
-page = st.sidebar.radio("go through", pages)
+page = st.sidebar.radio("", pages)
 
 Team_members = [
     "Vixra KEO",
@@ -283,11 +283,12 @@ elif page == pages[4]:
     st.write("After that we went on with the feature engineering, in which we did an evaluation of the remaining variables and handled outliers. Finally, we carried out the modeling. At the end of the modeling, it could be deduced that the Gradient Boost model performed best with respect to the R² and RMSE.")
 
     st.write("**Limits:**")
+    st.write("- Removing outliers simplified the training but seemed to make the prediction more dependant on input data (hint at overfitting)")
     st.write("- r and least squares regression are NOT resistant to outliers.")
-    st.write("- There might be additional factors besides the predictor variables that are not explored but have an impact on the response variable.")
-    st.write("- Strong correlation does NOT equal causation and effect.")
+    st.write("- Other factors than the predictor variables that are not studied but have an influence on the response variable may exist. In other words, the data we have doesn't fully explain the results. This was to be expected due to the low values in the correlation matrix.")
+    st.write("- A high degree of correlation does not imply causality and effect. Maybe the features our models trained do not have real predictive power and the model is just learning from correlation. If this was the case, then our model wouldn't be generalisable to make predictions on other data.")
 
     st.write("**Suggestions:**")
-    st.write("- Using SMOTE data augmentation because of imbalanced classification, ")
-    st.write("- Enriching the data by joining new data (using ISBN), ")
-    st.write("- Exploiting the droped features using NLP for book titles.")
+    st.write("- Employing SMOTE data augmentation due to unbalanced dataset in terms of average_rating.")
+    st.write("- Enriching the data by merging fresh data (using ISBN as merging key).")
+    st.write("- Using NLP to exploit the dropped characteristics such as book titles.")
